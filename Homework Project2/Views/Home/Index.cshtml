@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Homework_Project2.Models.Product>
+@{
+    ViewBag.Title = "產品列表";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4" style="margin-top:20px">
+            <div class="thumbnail">
+                <img src="~/images/@item.Img" style="width:70%"/>
+                <div class="caption">
+                    <h2>@item.Name</h2>
+                    <p>單價:@item.Price</p>
+                        <p><a href="@Url.Action("AddCar")?PId=@item.PId" class="btn btn-primary "><span class="glyphicon glyphicon-shopping-cart"></span>加入購物車</a></p>                   
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
